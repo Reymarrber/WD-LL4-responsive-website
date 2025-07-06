@@ -1,0 +1,76 @@
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: white;
+}
+
+.logo {
+  height: 40px;
+}
+
+.tagline {
+  color: #BF6B45;
+  font-size: 1.2rem;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-text-bubble {
+  position: absolute;
+  top: 20%;
+  right: 5%;
+  background-color: #BF6B45;
+  color: #FDD835;
+  padding: 1.5rem;
+  border-radius: 2rem;
+  max-width: 300px;
+  font-weight: bold;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.cta-button {
+  position: absolute;
+  bottom: 10%;
+  left: 5%;
+  background-color: #FDD835;
+  color: black;
+  padding: 0.8rem 1.5rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 2rem;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.cta-button:hover {
+  transform: scale(1.05);
+}
