@@ -7,6 +7,18 @@
   <link rel="stylesheet" href="css/style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <style>
+    .progress-label {
+      font-size: 1rem;
+      color: white;
+      text-align: right;
+      margin-top: 0.5rem;
+      margin-right: 5%;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      font-weight: 600;
+      z-index: 2;
+    }
+  </style>
 </head>
 <body>
   <div class="ripple"></div>
@@ -34,35 +46,39 @@
 
       <div class="progress-container">
         <div class="progress-bar" id="progressBar"></div>
-        <div class="progress-label">70% to goal</div>
       </div>
+      <div class="progress-label" id="progressText">Help us reach our goal of $10,000</div>
     </div>
   </section>
 
   <div id="thank-you-message">Thank you for donating!</div>
 
   <script>
+    let currentProgress = 70;
+    let maxGoal = 10000;
+
     function handleClick() {
-      // Show thank you message
       const thankYou = document.getElementById('thank-you-message');
       thankYou.classList.add('show');
 
-      // Animate progress bar
-      const progress = document.getElementById('progressBar');
-      progress.style.width = '100%';
+      if (currentProgress < 100) {
+        currentProgress = Math.min(currentProgress + 20, 100);
+        document.getElementById('progressBar').style.width = currentProgress + '%';
 
-      // Launch confetti in charity: water palette (yellow, rust, blue)
+        // Update progress label dynamically
+        const dollarAmount = Math.round((currentProgress / 100) * maxGoal);
+        document.getElementById('progressText').textContent = `$${dollarAmount.toLocaleString()} raised of $10,000 goal`;
+      }
+
       confetti({
-        particleCount: 120,
-        spread: 80,
+        particleCount: 100,
+        spread: 70,
         origin: { y: 0.6 },
         colors: ['#FDD835', '#BF6B45', '#2E86AB'],
       });
 
-      // Hide message after 3 seconds
       setTimeout(() => {
         thankYou.classList.remove('show');
-        progress.style.width = '70%';
       }, 3000);
     }
   </script>
