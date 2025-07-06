@@ -51,7 +51,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 30% center;  /* Shift left */
+  object-position: 60% center;  /* Shift left */
   display: block;
 }
 
