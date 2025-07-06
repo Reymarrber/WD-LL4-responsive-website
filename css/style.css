@@ -6,7 +6,7 @@
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   background-color: white;
   color: #2E2E2E;
   line-height: 1.6;
@@ -21,17 +21,19 @@ body {
   padding: 1rem 2rem;
   background-color: white;
   border-bottom: 1px solid #eee;
-  margin-bottom: 0;
+  position: relative;
+  z-index: 10;
 }
 
 .logo {
-  height: 40px;           /* Balanced logo size */
+  max-height: 50px;
   width: auto;
-  vertical-align: middle; /* Align better with text */
+  display: block;
+  object-fit: contain;
 }
 
 .tagline {
-  font-size: 2rem;        /* Roughly 32px */
+  font-size: 2rem;
   color: #BF6B45;
   font-weight: 700;
   text-align: right;
@@ -43,7 +45,7 @@ body {
 .hero {
   position: relative;
   width: 100%;
-  height: 90vh;           /* Laptop-friendly */
+  height: 90vh;
   overflow: hidden;
 }
 
@@ -51,8 +53,9 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 60% center;  /* Shift left */
+  object-position: 10% center;
   display: block;
+  z-index: -1;
 }
 
 .hero-overlay {
@@ -63,19 +66,44 @@ body {
   height: 100%;
 }
 
-/* Orange speech bubble */
-.hero-text-bubble {
+/* Hero Text Styles */
+.hero-text {
   position: absolute;
-  top: 15%;
+  top: 28%;
   right: 5%;
-  background-color: #BF6B45;
+  text-align: right;
+  max-width: 420px;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+.hero-text .highlight {
+  font-weight: 800;
   color: #FDD835;
-  padding: 2rem 2.5rem;
-  border-radius: 2rem;
-  max-width: 350px;
-  font-weight: bold;
-  font-size: 1.5rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-size: 1.8rem;
+}
+
+.hero-text .emphasis {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #FDD835;
+}
+
+.hero-text .impact-line {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: white;
+}
+
+.hero-text .closing-line {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: white;
+  display: block;
+  margin-top: 0.5rem;
 }
 
 /* CTA Button */
@@ -111,11 +139,11 @@ body {
     text-align: left;
   }
 
-  .hero-text-bubble {
+  .hero-text {
     font-size: 1.1rem;
     max-width: 90%;
     right: 5%;
-    top: 15%;
+    top: 22%;
   }
 
   .cta-button {
@@ -125,6 +153,6 @@ body {
   }
 
   .logo {
-    height: 60px;
+    max-height: 60px;
   }
 }
