@@ -25,15 +25,14 @@ body {
 }
 
 .logo {
-  height: 100px;
+  height: 120px;
   width: auto;
+  margin-top: 0.25rem;
 }
 
 .tagline {
-  font-size: 2rem;
-  color: #BF6B45;
-  font-weight: 700;
-  text-align: right;
+  font-size: 1.8rem;
+  padding-bottom: 0.5rem;
   margin-bottom: 0;
 }
 
