@@ -10,6 +10,7 @@ body {
   background-color: white;
   color: #2E2E2E;
   line-height: 1.6;
+  margin: 0;
 }
 
 /* Header */
@@ -17,13 +18,14 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 3rem;
+  padding: 1rem 2rem;
   background-color: white;
   border-bottom: 1px solid #eee;
+  margin-bottom: 0;
 }
 
 .logo {
-  height: 500px;
+  height: 100px;
   width: auto;
 }
 
@@ -32,6 +34,7 @@ body {
   color: #BF6B45;
   font-weight: 700;
   text-align: right;
+  margin-bottom: 0;
 }
 
 /* Hero Section */
@@ -119,6 +122,6 @@ body {
   }
 
   .logo {
-    height: 60px;
+    height: 70px;
   }
 }
