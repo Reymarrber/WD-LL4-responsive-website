@@ -78,6 +78,16 @@ body {
   font-weight: 500;
   line-height: 1.5;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+  z-index: 2;
+  opacity: 0;
+  animation: fadeInText 2s ease-out forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes fadeInText {
+  to {
+    opacity: 1;
+  }
 }
 
 .hero-text .highlight {
@@ -120,10 +130,84 @@ body {
   font-size: 1.1rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease;
+  z-index: 2;
 }
 
 .cta-button:hover {
   transform: scale(1.05);
+}
+
+/* Ripple Animation */
+.ripple {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 1%, transparent 70%) center/300% 300% no-repeat;
+  pointer-events: none;
+  animation: ripple 6s infinite ease-in-out;
+  z-index: 1;
+}
+
+@keyframes ripple {
+  0%, 100% {
+    background-position: 50% 50%;
+  }
+  50% {
+    background-position: 60% 40%;
+  }
+}
+
+/* Progress Bar */
+.progress-container {
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  width: 250px;
+  height: 12px;
+  background-color: #eee;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 2;
+}
+
+.progress-bar {
+  width: 0%;
+  height: 100%;
+  background-color: #FDD835;
+  transition: width 1.5s ease-in-out;
+}
+
+.progress-label {
+  font-size: 0.9rem;
+  text-align: right;
+  margin-top: 0.3rem;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+/* Thank You Message */
+#thank-you-message {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #FDD835;
+  color: black;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  font-weight: 700;
+  font-size: 1.2rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 5;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+#thank-you-message.show {
+  opacity: 1;
 }
 
 /* Responsive Styles */

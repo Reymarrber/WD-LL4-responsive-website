@@ -6,8 +6,11 @@
   <title>Charity: Water</title>
   <link rel="stylesheet" href="css/style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </head>
 <body>
+  <div class="ripple"></div>
+
   <header class="top-header">
     <img src="img/logo.png" alt="Charity Water Logo" class="logo" />
     <h1 class="tagline">Make Waves. From Anywhere</h1>
@@ -27,8 +30,41 @@
         </p>
       </div>
 
-      <a href="#" class="cta-button">Start Making Waves Now</a>
+      <a href="#" class="cta-button" onclick="handleClick()">Start Making Waves Now</a>
+
+      <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+        <div class="progress-label">70% to goal</div>
+      </div>
     </div>
   </section>
+
+  <div id="thank-you-message">Thank you for donating!</div>
+
+  <script>
+    function handleClick() {
+      // Show thank you message
+      const thankYou = document.getElementById('thank-you-message');
+      thankYou.classList.add('show');
+
+      // Animate progress bar
+      const progress = document.getElementById('progressBar');
+      progress.style.width = '100%';
+
+      // Launch confetti in charity: water palette (yellow, rust, blue)
+      confetti({
+        particleCount: 120,
+        spread: 80,
+        origin: { y: 0.6 },
+        colors: ['#FDD835', '#BF6B45', '#2E86AB'],
+      });
+
+      // Hide message after 3 seconds
+      setTimeout(() => {
+        thankYou.classList.remove('show');
+        progress.style.width = '70%';
+      }, 3000);
+    }
+  </script>
 </body>
 </html>
