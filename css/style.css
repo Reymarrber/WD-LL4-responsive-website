@@ -1,4 +1,4 @@
-/* Reset & Base */
+/* Reset and base styles */
 * {
   margin: 0;
   padding: 0;
@@ -17,20 +17,21 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 1.5rem 3rem;
   background-color: white;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #eee;
 }
 
 .logo {
-  height: 50px;
+  height: 500px;
   width: auto;
 }
 
 .tagline {
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: #BF6B45;
-  font-weight: 600;
+  font-weight: 700;
+  text-align: right;
 }
 
 /* Hero Section */
@@ -48,7 +49,6 @@ body {
   display: block;
 }
 
-/* Overlay container */
 .hero-overlay {
   position: absolute;
   top: 0;
@@ -57,7 +57,7 @@ body {
   height: 100%;
 }
 
-/* Orange text bubble */
+/* Orange speech bubble */
 .hero-text-bubble {
   position: absolute;
   top: 20%;
@@ -97,11 +97,12 @@ body {
   .top-header {
     flex-direction: column;
     align-items: flex-start;
+    gap: 0.5rem;
   }
 
   .tagline {
-    font-size: 1.2rem;
-    margin-top: 0.5rem;
+    font-size: 1.5rem;
+    text-align: left;
   }
 
   .hero-text-bubble {
@@ -115,5 +116,9 @@ body {
     font-size: 0.9rem;
     bottom: 8%;
     left: 5%;
+  }
+
+  .logo {
+    height: 60px;
   }
 }
