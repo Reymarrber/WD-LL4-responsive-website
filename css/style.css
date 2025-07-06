@@ -25,7 +25,7 @@ body {
 }
 
 .logo {
-  height: 75px;           /* Balanced logo size */
+  height: 40px;           /* Balanced logo size */
   width: auto;
   vertical-align: middle; /* Align better with text */
 }
